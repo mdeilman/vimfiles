@@ -16,12 +16,6 @@
 execute pathogen#infect()
 call pathogen#helptags()
 "
-"
-" Language
-"
-let $LANG = 'en'
-set langmenu=none
-"
 set number            " I want line numbers
 set nocompatible      " We're running Vim, not Vi!
 set ruler             " Show row, column
@@ -56,16 +50,20 @@ set cindent
 filetype on           " Enable fieltype detefackction
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
 "
 "I don't want a f***ing bell at all visual or not
 "
+
 set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
+
 "
 " Windows Specific options
 "
+
 if has("gui_running")
   " GUI is running or is about to start.
   " Maximize gvim window.
@@ -81,7 +79,7 @@ else
     set columns=140
   endif
 endif
-"
+
 if has("win32")
     set backupdir=c:\home\vimfiles\tmp\scratch
     set guifont=Consolas:h12:cANSI
@@ -96,6 +94,7 @@ if has("gui_macvim")
     set transp=1
     set anti enc=utf-8 tenc=macroman gfn=Monaco:h14
 endif
+
 " Remapping the Ctrl-] key specially useful for german/mac keyboards
 nnoremap ü <C-]>
 " To get rid of the "+gP and replace it by Ctrl-v
@@ -187,6 +186,7 @@ set showmatch
 "
 " Mapping stuff
 "
+let mapleader = "\<Space>"
 nmap <silent><Leader>B <ESC>/end<CR>=%:noh<CR>
 nmap <silent> <M-S-Left> <ESC>:bp<CR>
 nmap <Leader>U <ESC>:TlistUpdate<CR>
